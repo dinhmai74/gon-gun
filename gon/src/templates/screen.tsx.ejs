@@ -1,0 +1,35 @@
+import React from "react"
+import { observer } from "mobx-react-lite"
+import { ViewStyle, StyleSheet } from "react-native"
+import { Screen, Text, Header, View } from "components"
+// import { useStores } from "models/root-store"
+import { color, spacing } from "theme"
+import { NativeStackNavigationProp } from "react-native-screens/native-stack"
+import { ParamListBase } from "@react-navigation/native"
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: spacing[6]
+  }
+})
+
+export interface <%= props.pascalName %>Props {
+  navigation: NativeStackNavigationProp<ParamListBase>
+}
+
+export const <%= props.pascalName %>: React.FunctionComponent<<%= props.pascalName %>Props> = observer((props) => {
+  // const { someStore, anotherStore } = useStores()
+  // OR
+  // const rootStore = useStores()
+
+  return (
+    <Screen preset="scroll">
+      <Header headerTx="<%= props.camelName %>.header" leftIcon="back" />
+      <View style={styles.container} >
+        <Text>123</Text>
+      </View>
+    </Screen>
+  )
+})
