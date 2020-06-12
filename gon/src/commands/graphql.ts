@@ -40,14 +40,14 @@ export const run = async function(toolbox: GluegunToolbox) {
     },
     {
       template: 'graphql-input.ts.ejs',
-      target: `./src/graphql-types/input/${pascalName}Input.ts`,
-      exportToAdd: `export * from "./input/${pascalName}Input"\n`,
+      target: `./src/graphql-types/${kebabName}/${pascalName}Input.ts`,
+      exportToAdd: `export * from "./${kebabName}/${pascalName}Input"\n`,
       barrel: './src/graphql-types/index.ts'
     },
     {
       template: 'graphql-response.ts.ejs',
-      target: `./src/graphql-types/response/${pascalName}Response.ts`,
-      exportToAdd: `export * from "./response/${pascalName}Response"\n`,
+      target: `./src/graphql-types/${kebabName}/${pascalName}Response.ts`,
+      exportToAdd: `export * from "./${kebabName}/${pascalName}Response"\n`,
       barrel: './src/graphql-types/index.ts'
     },
     {
